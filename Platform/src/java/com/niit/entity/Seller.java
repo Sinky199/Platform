@@ -11,17 +11,17 @@ import java.util.Date;
  *
  * @author M
  */
-public class Sellers {
+public class Seller {
     private int seller_id;               //ID
     private String seller_email;         //登录账号  
     private String seller_password;      //密码
-    private String seller_name;          //买家姓名
-    private String seller_card;          //买家身份证号码
-    private String seller_phone;         //买家联系电话
-    private String seller_address;       //买家配送地址
-    private int seller_number;
-    private Date seller_date;            //买家账号注册日期
-    private int seller_status;           //买家账号状态（1为在线，0为不在线）
+    private String seller_name;          //卖家姓名
+    private String seller_card;          //卖家身份证号码
+    private String seller_phone;         //卖家联系电话
+    private String seller_address;       //卖家地址
+    private int seller_number;           //卖家售卖的产品数量
+    private Date seller_date;            //卖家账号注册日期
+    private int seller_status;           //卖家账号状态（1为在线，0为不在线）
 
     public int getSeller_id() {
         return seller_id;
