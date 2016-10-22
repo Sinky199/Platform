@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50633
 File Encoding         : 65001
 
-Date: 2016-10-22 16:18:07
+Date: 2016-10-22 16:21:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -100,17 +100,18 @@ CREATE TABLE `product_manager` (
   `parent_id` int(11) DEFAULT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `value` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of product_manager
 -- ----------------------------
-INSERT INTO `product_manager` VALUES ('1', '0', '品牌', '联想');
-INSERT INTO `product_manager` VALUES ('2', '1', '型号', 'y400');
-INSERT INTO `product_manager` VALUES ('3', '1', '型号', 'y500');
-INSERT INTO `product_manager` VALUES ('4', '2', '颜色', '黑色');
-INSERT INTO `product_manager` VALUES ('5', '3', '颜色', '白色');
+INSERT INTO `product_manager` VALUES ('1', '0', '品牌', '联想', '1101');
+INSERT INTO `product_manager` VALUES ('2', '1', '型号', 'y400', '1101');
+INSERT INTO `product_manager` VALUES ('3', '1', '型号', 'y500', '1101');
+INSERT INTO `product_manager` VALUES ('4', '2', '颜色', '黑色', '1101');
+INSERT INTO `product_manager` VALUES ('5', '3', '颜色', '白色', '1101');
 
 -- ----------------------------
 -- Table structure for sale_info
