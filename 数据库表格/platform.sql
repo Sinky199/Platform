@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50633
 File Encoding         : 65001
 
-Date: 2016-10-22 16:21:49
+Date: 2016-10-22 16:37:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -77,9 +77,9 @@ INSERT INTO `manager` VALUES ('1', '1', '1', '1', '1', '1');
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `pro_id` int(11) NOT NULL AUTO_INCREMENT,
-  `pro_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `pro_type` text COLLATE utf8_unicode_ci NOT NULL,
+  `pro_name` text COLLATE utf8_unicode_ci NOT NULL,
   `pro_type_name` text COLLATE utf8_unicode_ci NOT NULL,
+  `pro_type_value` text COLLATE utf8_unicode_ci NOT NULL,
   `pro_price` double DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   `seller_id` int(11) DEFAULT NULL,
@@ -114,10 +114,10 @@ INSERT INTO `product_manager` VALUES ('4', '2', '颜色', '黑色', '1101');
 INSERT INTO `product_manager` VALUES ('5', '3', '颜色', '白色', '1101');
 
 -- ----------------------------
--- Table structure for sale_info
+-- Table structure for sale
 -- ----------------------------
-DROP TABLE IF EXISTS `sale_info`;
-CREATE TABLE `sale_info` (
+DROP TABLE IF EXISTS `sale`;
+CREATE TABLE `sale` (
   `sale_id` int(11) NOT NULL AUTO_INCREMENT,
   `seller_id` int(11) DEFAULT NULL,
   `buyer_id` int(11) DEFAULT NULL,
@@ -128,9 +128,9 @@ CREATE TABLE `sale_info` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
--- Records of sale_info
+-- Records of sale
 -- ----------------------------
-INSERT INTO `sale_info` VALUES ('1', '1', '1', '1', '2016-10-22 15:22:53', '好评');
+INSERT INTO `sale` VALUES ('1', '1', '1', '1', '2016-10-22 15:22:53', '好评');
 
 -- ----------------------------
 -- Table structure for seller
@@ -161,8 +161,9 @@ INSERT INTO `seller` VALUES ('1', '476192918@qq.com', '123456', '郑俊坛', '12
 DROP TABLE IF EXISTS `shop`;
 CREATE TABLE `shop` (
   `shop_id` int(11) NOT NULL,
-  `shop_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `seller_id` int(11) DEFAULT NULL,
+  `shop_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `shop_status` int(11) DEFAULT NULL,
   `shop_date` datetime DEFAULT NULL,
   PRIMARY KEY (`shop_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -170,4 +171,4 @@ CREATE TABLE `shop` (
 -- ----------------------------
 -- Records of shop
 -- ----------------------------
-INSERT INTO `shop` VALUES ('1', '联想官方销售', '1', '2016-10-22 16:07:43');
+INSERT INTO `shop` VALUES ('1', '1', '联想官方销售', null, '2016-10-22 16:07:43');
