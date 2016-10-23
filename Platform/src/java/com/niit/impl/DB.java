@@ -21,7 +21,7 @@ public class DB {
     {
      
          //连接MySQL数据库
-        String url="jdbc:mysql://localhost:3306/library";
+        String url="jdbc:mysql://localhost:3306/platform";
         Connection con = null;
         String username="root";
         String password = "niit";
